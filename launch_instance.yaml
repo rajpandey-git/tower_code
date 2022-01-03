@@ -1,0 +1,37 @@
+---
+ - name: play to launch ec2 instance
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   tasks: 
+
+   - name: Create a new EC2 key
+     ec2_key:
+         name: ec2_test_key
+         region: us-east-1
+     register: ec2_result
+ 
+   - name: Save private key
+     copy: content="{{ ec2_result.key.private_key }}" dest="./ec2_test_key.pem" mode=400
+     when: ec2_result.changed
+
+   - name: launce ec2 instance
+     ec2: 
+        instance_type: t2.micro
+        image: ami-0aeeebd8d2ab47354
+        count: 1
+        region: us-east-1
+        key_name: ec2_test_key
+        group: launch-wizard-2
+        wait: yes
+        instance_tags:
+         Name: RAM_aws
+         Env: Dev
+
+     register: ec2
+   - name: print all ec2 variables
+     debug: var=ec2
+   - name: get the IP address
+     debug: var=ec2.instances[0].private_dns_name
+
+

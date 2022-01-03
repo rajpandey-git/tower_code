@@ -1,0 +1,12 @@
+- name: This play is used to terminate ec2 Instance
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+  - name: terminating the ec2 instance
+    ec2: 
+      instance_ids: i-0052c2071dd331b2d
+      region: us-east-1
+      state: absent
+      wait: yes
+

@@ -1,0 +1,11 @@
+---
+- name: Play to delete ec2 key
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+  - name: Delete a EC2 key
+    ec2_key:
+        name: ec2_test_key  
+        region: us-east-1
+        state: absent
