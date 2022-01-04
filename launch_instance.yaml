@@ -12,7 +12,7 @@
      register: ec2_result
  
    - name: Save private key
-     copy: content="{{ ec2_result.key.private_key }}" dest="./ec2_test_key.pem" mode=400
+     copy: content="{{ ec2_result.key.private_key }}" dest="/home/rajpandey/aws_cloud/playbooks/aws_instance_operations/ec2_test_key.pem" mode=400
      when: ec2_result.changed
 
    - name: launce ec2 instance
