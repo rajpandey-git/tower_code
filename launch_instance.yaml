@@ -25,7 +25,7 @@
         group: launch-wizard-2
         wait: yes
         instance_tags:
-         Name: RAM_aws
+         Name: Developement
          Env: Dev
 
      register: ec2
