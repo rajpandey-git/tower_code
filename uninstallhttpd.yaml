@@ -1,0 +1,9 @@
+---
+- name: Installing htpd service on the server
+  hosts: db
+  become: yes 
+  tasks: 
+  - name: untinstalling httpd
+    yum:
+       name: httpd
+       state: absent

@@ -1,7 +1,7 @@
 ---
 - name: Installing htpd service on the server
-  hosts: localhost
-  connection: local
+  hosts: db
+  become: yes 
   tasks: 
   - name: installing httpd
     yum:
