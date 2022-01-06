@@ -1,0 +1,24 @@
+---
+- name: Install Ansible
+  hosts: db
+  become: yes
+  tasks:
+  - name: Installing python
+    package:
+        name:
+          - python-setuptools
+          - python3
+          - python3-devel
+          - python3-pip
+          - pip
+        state: present
+  - name: Installing pip3
+    pip:
+      name: pip
+      extra_args: --upgrade
+      executable: pip3
+ 
+  - name: install ansible
+    pip: 
+      name: ansible
+      state: present
