@@ -1,6 +1,6 @@
 ---
 - name: install firewalld service
-  hosts: db
+  hosts: all
   become: yes
   tasks: 
   - name: install firewalld
