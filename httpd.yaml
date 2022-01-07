@@ -1,6 +1,6 @@
 ---
 - name: Installing htpd service on the server
-  hosts: db
+  hosts: all
   become: yes 
   tasks: 
   - name: installing httpd
