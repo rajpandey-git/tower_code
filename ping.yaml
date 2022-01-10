@@ -1,0 +1,11 @@
+---
+- name: Hosts reachablity test
+  hosts: ec2
+  tasks:
+  - name: check ping pong
+    ping:
+    register: ping_status
+
+  - name: print ping status
+    debug:
+            msg: "{{ ping_status }}"    
