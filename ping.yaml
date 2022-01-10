@@ -1,6 +1,6 @@
 ---
 - name: Hosts reachablity test
-  hosts: ec2
+  hosts: all
   tasks:
   - name: check ping pong
     ping:
