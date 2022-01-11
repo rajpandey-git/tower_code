@@ -1,6 +1,6 @@
 ---
 - name: Hosts reachablity test
-  hosts: compute-1.amazonaws.com
+  hosts: tag_Nmae_chef
   tasks:
   - name: check ping pong
     ping:
