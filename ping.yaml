@@ -1,6 +1,10 @@
 ---
 - name: Hosts reachablity test
+<<<<<<< HEAD
   hosts: tag_Nmae_chef
+=======
+  hosts: aws_ec2
+>>>>>>> dd1f72b262f5acae0d4e31e9e904166af4214ab0
   tasks:
   - name: check ping pong
     ping:
