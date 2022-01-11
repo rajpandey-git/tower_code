@@ -1,6 +1,6 @@
 ---
 - name: Hosts reachablity test
-  hosts: compute-1.amazonaws.com
+  hosts: aws_ec2
   tasks:
   - name: check ping pong
     ping:
