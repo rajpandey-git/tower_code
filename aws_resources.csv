@@ -1,0 +1,3 @@
+ami_id,sg,key_name,region,instance_type,subnet
+ami-0022f774911c1d690,Chef_SG,ec2_key,us-east-1,t2.micro,subnet-02db5d538223f70ed
+ami-0022f774911c1d690,Chef_SG,ec2_key,us-east-1,t2.micro,subnet-02db5d538223f70ed
